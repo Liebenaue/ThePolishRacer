@@ -1,0 +1,296 @@
+﻿<Page x:Class="WpfApp1.DuelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="DuelWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="Black" />
+                <GradientStop Offset="1" Color="#FFF1A7A7" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*" />
+            <ColumnDefinition Width="91*" />
+        </Grid.ColumnDefinitions>
+
+        <Label
+            Grid.Column="1"
+            Width="222"
+            Margin="217,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FFCF9776"
+            Content="The Polish Fighter"
+            FontFamily="Comic Sans MS"
+            FontSize="24" 
+            Height="43" />
+
+        <TextBox
+            x:Name="charName"
+            Grid.Column="1"
+            Width="131"
+            Height="43"
+            Margin="35,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="24"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charAge"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="90,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charHeight"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="90,135,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charHP"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="90,183,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charMass"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="90,233,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charStrength"
+            Grid.Column="1"
+            Width="120"
+            Height="24"
+            Margin="90,282,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charRes"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="90,330,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+
+        <TextBox
+            x:Name="charName2"
+            Grid.Column="1"
+            Width="131"
+            Height="43"
+            Margin="491,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="24"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charAge2"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="528,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charHeight2"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="528,135,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charHP2"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="528,183,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charMass2"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="528,233,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charStrength2"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="528,282,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="charRes2"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            Margin="528,330,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+
+
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="23"
+            Margin="1,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Wiek" />
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="23"
+            Margin="1,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Wzrost" />
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="26"
+            Margin="1,180,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="PKT Życia" />
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="31"
+            Margin="1,229,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Masa (kg)" />
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="23"
+            Margin="1,280,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Siła" />
+        <Label
+            Width="118"
+            Height="34"
+            Margin="3,327,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Opór" 
+            Grid.Column="1" />
+
+        <Label
+            Grid.Column="1"
+            Width="110"
+            Height="23"
+            Margin="435,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Wiek" />
+        <Label
+            Grid.Column="1"
+            Width="100"
+            Height="28"
+            Margin="435,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Wzrost" />
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="23"
+            Margin="435,183,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="PKT Życia" />
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="28"
+            Margin="435,228,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Masa (kg)" />
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="34"
+            Margin="435,280,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Siła" />
+        <Label
+            Grid.Column="1"
+            Width="89"
+            Height="36"
+            Margin="435,325,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Opór" />
+
+        <Button
+            x:Name="punch"
+            Width="90"
+            Margin="283,111,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Uderz"
+            FontSize="18" Grid.Column="1" Click="punch_Click" Height="28" />
+        <Button
+            x:Name="push"
+            Width="90"
+            Margin="283,181,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Popchnij"
+            FontSize="18" Grid.Column="1" Click="push_Click" Height="28" />
+        <Button
+            x:Name="retreat"
+            Width="90"
+            Margin="283,251,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Uciekaj"
+            FontSize="18" Grid.Column="1" Click="retreat_Click" Height="28" />
+        <Button
+            x:Name="back"
+            Grid.Column="1"
+            Width="75"
+            Margin="557,389,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="back_Click"
+            Content="Wróć" Height="20" />
+    </Grid>
+</Page>
