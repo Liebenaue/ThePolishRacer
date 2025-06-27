@@ -67,9 +67,8 @@
             Margin="192,216,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="run_Click"
-            Content="Trening Biegowy"
-            FontSize="20" />
+            Content="Ulepszenia"
+            FontSize="22" />
         <Button
             x:Name="hold"
             Grid.Column="1"
@@ -86,7 +85,7 @@
             Margin="192,308,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Zjedz"
+            Content="Zatankuj Auto"
             FontSize="22" />
         <Button
             x:Name="nextday"

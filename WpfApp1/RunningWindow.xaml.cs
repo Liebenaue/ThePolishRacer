@@ -1,6 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -19,20 +19,20 @@ namespace WpfApp1
         private int rows = 20;
         private int cols = 30;
         private int score = 0;
-        private Vector currentDirection = new Vector(1, 0); // Start: prawo
+        private Vector currentDirection = new Vector(1, 0);
+        private bool isPaused = false;
+        private int fuel = 0;
+        private Random rand = new Random();
 
         public RunningWindow()
         {
             InitializeComponent();
-
-            this.Focusable = true;
-            this.Focus();
-            this.KeyDown += Page_KeyDown;
-            this.Loaded += Page_Loaded;
-
-            gameTimer.Interval = TimeSpan.FromMilliseconds(200);
+            Focusable = true;
+            Keyboard.Focus(this);
+            KeyDown += Page_KeyDown;
+            Loaded += Page_Loaded;
+            gameTimer.Interval = TimeSpan.FromMilliseconds(120);
             gameTimer.Tick += GameTick;
-
             StartGame();
         }
 
@@ -43,6 +43,14 @@ namespace WpfApp1
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Space)
+            {
+                isPaused = !isPaused;
+                return;
+            }
+
+            if (isPaused) return;
+
             if (e.Key == Key.Up && currentDirection != new Vector(0, 1))
                 currentDirection = new Vector(0, -1);
             else if (e.Key == Key.Down && currentDirection != new Vector(0, -1))
@@ -55,6 +63,27 @@ namespace WpfApp1
 
         private void StartGame()
         {
+            try
+            {
+                string[] lines = File.ReadAllLines("data.txt");
+                if (lines.Length > 9 && int.TryParse(lines[9], out int f))
+                {
+                    fuel = f;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd odczytu paliwa: " + ex.Message);
+                fuel = 0;
+            }
+
+            if (fuel <= 0)
+            {
+                MessageBox.Show("Brak paliwa! Nie możesz zagrać.", "Błąd");
+                NavigationService?.GoBack();
+                return;
+            }
+
             snake.Clear();
             snake.Add(new Point(5, 5));
             currentDirection = new Vector(1, 0);
@@ -65,53 +94,65 @@ namespace WpfApp1
 
         private void GameTick(object sender, EventArgs e)
         {
-            Point newHead = new Point(snake[0].X + currentDirection.X, snake[0].Y + currentDirection.Y);
+            if (isPaused) return;
 
-            // Kolizja ze ścianą lub samym sobą
+            Point currentHead = snake[0];
+            Point newHead = new Point(currentHead.X + currentDirection.X, currentHead.Y + currentDirection.Y);
+
             if (newHead.X < 0 || newHead.Y < 0 || newHead.X >= cols || newHead.Y >= rows || snake.Contains(newHead))
             {
-                gameTimer.Stop();
-
-                // Wczytaj plik
-                string[] lines = File.ReadAllLines("data.txt");
-
-                if (lines.Length > 16)
-                {
-                    if (int.TryParse(lines[16], out int currentMoney))
-                    {
-                        int newMoney = currentMoney + score;
-                        lines[16] = newMoney.ToString();
-                        File.WriteAllLines("data.txt", lines);
-                    }
-                }
-
-                MessageBox.Show($"Rozbiłeś się! Zgodnie z twoim wynikiem zarobiłeś: {score} złote", "Koniec gry");
-                this.NavigationService.GoBack();
+                EndGame();
                 return;
             }
 
+            bool ateFood = (newHead == food);
+            if (!ateFood)
+            {
+                snake.RemoveAt(snake.Count - 1);
+            }
             snake.Insert(0, newHead);
-
-            if (newHead == food)
+            if (ateFood)
             {
                 score++;
                 SpawnFood();
             }
-            else
+            DrawGame();
+        }
+
+        private void EndGame()
+        {
+            gameTimer.Stop();
+            try
             {
-                snake.RemoveAt(snake.Count - 1);
+                string[] lines = File.ReadAllLines("data.txt");
+                if (lines.Length > 16 && int.TryParse(lines[16], out int currentMoney))
+                {
+                    int newMoney = currentMoney + score;
+                    lines[16] = newMoney.ToString();
+                }
+                if (lines.Length > 9 && int.TryParse(lines[9], out int currentFuel))
+                {
+                    currentFuel = Math.Max(0, currentFuel - 1);
+                    lines[9] = currentFuel.ToString();
+                }
+                File.WriteAllLines("data.txt", lines);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd zapisu: " + ex.Message);
             }
 
-            DrawGame();
+            MessageBox.Show($"Rozbiłeś się! Zgodnie z twoim wynikiem zarobiłeś: {score} złote.", "Koniec gry");
+            NavigationService?.GoBack();
         }
 
         private void SpawnFood()
         {
-            Random rand = new Random();
             do
             {
                 food = new Point(rand.Next(cols), rand.Next(rows));
-            } while (snake.Contains(food));
+            }
+            while (snake.Contains(food));
         }
 
         private void DrawGame()
@@ -120,15 +161,15 @@ namespace WpfApp1
 
             foreach (Point p in snake)
             {
-                Rectangle rect = new Rectangle
+                Rectangle segment = new Rectangle
                 {
                     Width = gridSize,
                     Height = gridSize,
                     Fill = Brushes.Green
                 };
-                Canvas.SetLeft(rect, p.X * gridSize);
-                Canvas.SetTop(rect, p.Y * gridSize);
-                GameCanvas.Children.Add(rect);
+                Canvas.SetLeft(segment, p.X * gridSize);
+                Canvas.SetTop(segment, p.Y * gridSize);
+                GameCanvas.Children.Add(segment);
             }
 
             Rectangle foodRect = new Rectangle
@@ -145,3 +186,4 @@ namespace WpfApp1
         }
     }
 }
+
