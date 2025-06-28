@@ -1,0 +1,15 @@
+# Pliki tymczasowe Visual Studio
+.vs/
+*.suo
+*.user
+
+# Pliki wynikowe kompilacji
+bin/
+obj/
+
+# Inne śmieci
+*.log
+*.cache
+*.pdb
+*.baml
+*.iref
