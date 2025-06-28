@@ -22,14 +22,16 @@
         </Grid.ColumnDefinitions>
         <Label
             Grid.Column="1"
-            Width="222"
-            Margin="156,15,0,0"
+            Width="202"
+            Margin="166,15,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FFCF9776"
-            Content="The Polish Fighter"
+            Content="The Polish Racer"
             FontFamily="Comic Sans MS"
-            FontSize="24" />
+            FontSize="24"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
         <TextBox
             x:Name="calendar"
             Grid.Column="1"
