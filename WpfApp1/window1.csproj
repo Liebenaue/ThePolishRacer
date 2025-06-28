@@ -58,6 +58,9 @@
     <Compile Include="DuelWindow.xaml.cs">
       <DependentUpon>DuelWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FuelWindow.xaml.cs">
+      <DependentUpon>FuelWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <DependentUpon>window3.xaml</DependentUpon>
     </Compile>
     <Page Include="DuelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FuelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

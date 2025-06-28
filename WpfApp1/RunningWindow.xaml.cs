@@ -66,9 +66,9 @@ namespace WpfApp1
             try
             {
                 string[] lines = File.ReadAllLines("data.txt");
-                if (lines.Length > 9 && int.TryParse(lines[9], out int f))
+                if (lines.Length > 9 && double.TryParse(lines[9], out double f))
                 {
-                    fuel = f;
+                    fuel = (int)Math.Floor(f); // opcjonalnie zaokrąglenie w dół do pełnych litrów
                 }
             }
             catch (Exception ex)

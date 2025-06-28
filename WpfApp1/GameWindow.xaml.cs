@@ -206,5 +206,10 @@ namespace WpfApp1
             // (zapisywanie dziennych flag pominiete)
             this.NavigationService.Navigate(new Uri("MainWindow.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void Fuel_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("FuelWindow.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

@@ -89,7 +89,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zatankuj Auto"
-            FontSize="22" />
+            Click="Fuel_Click"
+            FontSize="22"/>
         <Button
             x:Name="nextday"
             Grid.Column="1"
