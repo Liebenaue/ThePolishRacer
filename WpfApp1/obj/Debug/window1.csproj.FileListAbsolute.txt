@@ -219,3 +219,5 @@ C:\Users\wojte\Desktop\gra_7\WpfApp1\obj\Debug\window1.csproj.GenerateResource.c
 C:\Users\wojte\Desktop\gra_7\WpfApp1\obj\Debug\window1.csproj.CoreCompileInputs.cache
 C:\Users\wojte\Desktop\gra_7\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\wojte\Desktop\gra_7\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\wojte\Desktop\gra_7\WpfApp1\obj\Debug\TrainWindow.g.cs
+C:\Users\wojte\Desktop\gra_7\WpfApp1\obj\Debug\TrainWindow.baml

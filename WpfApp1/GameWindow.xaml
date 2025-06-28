@@ -70,14 +70,15 @@
             Content="Ulepszenia"
             FontSize="22" />
         <Button
-            x:Name="hold"
+            x:Name="train"
             Grid.Column="1"
             Width="150"
             Margin="192,262,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Trening Siłowy"
-            FontSize="22" />
+            Content="Trening i Nauka"
+            Click="train_Click"
+            FontSize="21" />
         <Button
             x:Name="eat"
             Grid.Column="1"

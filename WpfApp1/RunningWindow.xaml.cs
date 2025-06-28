@@ -31,7 +31,7 @@ namespace WpfApp1
             Keyboard.Focus(this);
             KeyDown += Page_KeyDown;
             Loaded += Page_Loaded;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(120);
+            gameTimer.Interval = TimeSpan.FromMilliseconds(30);
             gameTimer.Tick += GameTick;
             StartGame();
         }
@@ -165,7 +165,7 @@ namespace WpfApp1
                 {
                     Width = gridSize,
                     Height = gridSize,
-                    Fill = Brushes.Green
+                    Fill = Brushes.Blue
                 };
                 Canvas.SetLeft(segment, p.X * gridSize);
                 Canvas.SetTop(segment, p.Y * gridSize);
