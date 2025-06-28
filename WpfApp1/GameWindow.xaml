@@ -22,14 +22,16 @@
         </Grid.ColumnDefinitions>
         <Label
             Grid.Column="1"
-            Width="222"
-            Margin="156,15,0,0"
+            Width="202"
+            Margin="166,15,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FFCF9776"
-            Content="The Polish Fighter"
+            Content="The Polish Racer"
             FontFamily="Comic Sans MS"
-            FontSize="24" />
+            FontSize="24"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
         <TextBox
             x:Name="calendar"
             Grid.Column="1"
@@ -67,18 +69,18 @@
             Margin="192,216,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="run_Click"
-            Content="Trening Biegowy"
-            FontSize="20" />
+            Content="Ulepszenia"
+            FontSize="22" />
         <Button
-            x:Name="hold"
+            x:Name="train"
             Grid.Column="1"
             Width="150"
             Margin="192,262,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Trening Siłowy"
-            FontSize="22" />
+            Content="Trening i Nauka"
+            Click="train_Click"
+            FontSize="21" />
         <Button
             x:Name="eat"
             Grid.Column="1"
@@ -86,7 +88,7 @@
             Margin="192,308,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Zjedz"
+            Content="Zatankuj Auto"
             FontSize="22" />
         <Button
             x:Name="nextday"

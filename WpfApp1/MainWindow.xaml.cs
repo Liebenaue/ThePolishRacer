@@ -46,7 +46,7 @@ namespace WpfApp1
 
         private void info_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Wersja Gry: Alpha v.0.1" + Environment.NewLine + "Data Powstania Wersji: 22.06.2025" + Environment.NewLine + "Autorzy: Maciej Brzoza");
+            MessageBox.Show("Wersja Gry: Alpha v.0.2" + Environment.NewLine + "Data Powstania Wersji: 28.06.2025" + Environment.NewLine + "Autorzy: Maciej Brzoza");
         }
 
         private void exit_Click(object sender, RoutedEventArgs e)

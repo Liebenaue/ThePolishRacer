@@ -87,9 +87,9 @@ namespace WpfApp1
             this.NavigationService.Navigate(new Uri("window3.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        public void run_Click(object sender, RoutedEventArgs e)
+        public void train_Click(object sender, RoutedEventArgs e)
         {
-            // (Opcja dziennego grania w Snake – funkcja nieużywana na tę chwilę)
+            this.NavigationService.Navigate(new Uri("TrainWindow.xaml", UriKind.RelativeOrAbsolute));
         }
 
         public void nextday_Click(object sender, RoutedEventArgs e) // Zakończenie dnia, odświeżenie okna i aktualizacja danych
