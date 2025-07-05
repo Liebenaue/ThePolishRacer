@@ -73,11 +73,13 @@ to **symulator kariery kierowcy**!
 
 ---
 
-## 💻 Uruchomienie lokalne
+## 💻 Uruchomienie lokalne1
 
-1. Otwórz plik `gra_7.sln` w Visual Studio  
-2. Zbuduj projekt i uruchom (`Start`)  
-3. Upewnij się, że projekt domyślny to `WpfApp1`  
+1. Pobierz repozytorium z githuba, powinno się zapisać pod nazwą: ThePolishRacer-PolishRacer.zip
+2. Rozpakuj zipa na komputerze
+3. W folderze ThePolishRacer-PolishRacer Otwórz plik `WpfApp1.sln` w Visual Studio  
+4. Zbuduj projekt i uruchom (`Start`)  
+5. Upewnij się, że projekt domyślny to `WpfApp1`  
 
 ---
 
